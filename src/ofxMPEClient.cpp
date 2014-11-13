@@ -489,7 +489,7 @@ void ofxMPEClient::threadedFunction() {
 //--------------------------------------------------------------
 // Reads and parses a message from the server.
 //--------------------------------------------------------------
-void ofxMPEClient::read(string _serverInput) {
+void ofxMPEClient::read(const string &_serverInput) {
     log("Receiving: " + _serverInput);
 
     char c = _serverInput.at(0);
@@ -592,7 +592,7 @@ void ofxMPEClient::reset()
 //--------------------------------------------------------------
 // Send a message to the server.
 //--------------------------------------------------------------
-void ofxMPEClient::send(string &_msg) {
+void ofxMPEClient::send(const string &_msg) {
 
     //_msg += "\n";
     if(!simulationMode && frameLock){

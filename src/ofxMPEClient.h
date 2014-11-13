@@ -106,8 +106,8 @@ class ofxMPEClient : public ofThread {
 
     void setupViewport();
 
-    void read(string _serverInput);
-    void send(string &_msg);
+    void read(const string &_serverInput);
+    void send(const string &_msg);
 
     void reset();
 
