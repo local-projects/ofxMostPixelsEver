@@ -47,6 +47,7 @@ class ofxMPEServer : public ofThread
 	void reset(); //sends a reset signal to all clients and reset frame count
 	void close();
 	void printClientStatus();
+    string getClientStatus();
 	
 	void exit(ofEventArgs& args);
 	

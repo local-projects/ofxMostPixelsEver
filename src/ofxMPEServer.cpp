@@ -290,6 +290,22 @@ void ofxMPEServer::printClientStatus() {
 	}
 }
 
+string ofxMPEServer::getClientStatus()
+{
+    stringstream statusStr;
+    
+    statusStr << "MPE Client Status:\n";
+    statusStr << "  Requiring " << numRequiredClients << " clients\n";
+    map<int, Connection>::iterator it;
+    for(it = connections.begin(); it != connections.end(); it++){
+        statusStr << (it->second.asynchronous ? "synchronous " : "asynchronous ") <<
+        " client #: " + ofToString(it->second.id) + ") "
+        << it->second.name + " server index: " << it->second.tcpServerIndex;
+    }
+
+    return statusStr.str();
+}
+
 void ofxMPEServer::exit(ofEventArgs& args){
 	close();
 }
